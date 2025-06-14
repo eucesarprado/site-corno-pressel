@@ -1,80 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '770744908951666'); // ID DO PIXEL AQUI, ANIMAL
-  fbq('track', 'PageView');
-</script>
-<noscript>
-  <img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=770744908951666&ev=PageView&noscript=1"/>
-</noscript>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Casa dos Corno</title>
+  <title>Autoavaliação Emocional</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '770744908951666');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=770744908951666&ev=PageView&noscript=1"/>
+  </noscript>
   <style>
     body {
       margin: 0;
-      padding: 0;
+      padding: 20px;
       font-family: 'Inter', sans-serif;
       background-color: #000;
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       text-align: center;
     }
-    .icon {
-      font-size: 80px;
-      color: #4FC3F7;
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 16px;
-      color: #aaa;
+    .question {
       margin-bottom: 30px;
     }
-    a.btn {
-      background-color: #4CAF50;
-      padding: 12px 20px;
+    h1 {
+      color: #FFD700;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin: 10px 0;
+    }
+    button {
+      background-color: #FFD700;
       color: #000;
-      border-radius: 8px;
-      text-decoration: none;
       font-weight: bold;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
     }
-    a.btn:hover {
-      background-color: #45a049;
+    .hidden {
+      display: none;
     }
-    .tg-icon {
-      font-size: 18px;
+    .result {
+      margin-top: 30px;
+    }
+    .utm-data {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #0f0;
     }
   </style>
 </head>
 <body>
-  <div class="icon">✅</div>
-  <h1>Seja Bem Vindo a La Casa dos Corno!</h1>
-  <p>Clique agora no botão abaixo e seja um de nós!</p>
-  <a class="btn" href="https://t.me/lacasadoscornosvip" target="_blank">
-    <span class="tg-icon">📲</span> CLIQUE AQUI PARA ENTRAR NO VIP
-  </a>
+  <h1>Autoavaliação Comportamental Anônima</h1>
+  <form id="quizForm">
+    <div class="question">
+      <p>1. Você sente impulsos emocionais incomuns em relação ao comportamento da sua parceira?</p>
+      <label><input type="radio" name="q1"> Sim, com frequência</label>
+      <label><input type="radio" name="q1"> Eventualmente</label>
+      <label><input type="radio" name="q1"> Não sinto isso</label>
+    </div>
+    <div class="question">
+      <p>2. Situações de controle ou hierarquia em relações geram estímulos psicológicos em você?</p>
+      <label><input type="radio" name="q2"> Sim, intensamente</label>
+      <label><input type="radio" name="q2"> Curiosidade leve</label>
+      <label><input type="radio" name="q2"> Não tenho isso</label>
+    </div>
+    <div class="question">
+      <p>3. Você sente satisfação ao imaginar cenários de observação ou distanciamento afetivo?</p>
+      <label><input type="radio" name="q3"> Sim, me provoca algo</label>
+      <label><input type="radio" name="q3"> Depende do contexto</label>
+      <label><input type="radio" name="q3"> Nunca</label>
+    </div>
+    <div class="question">
+      <p>4. Você sente vontade de entender melhor comportamentos considerados atípicos nas relações?</p>
+      <label><input type="radio" name="q4"> Sim, quero explorar isso</label>
+      <label><input type="radio" name="q4"> Um pouco</label>
+      <label><input type="radio" name="q4"> Não faz sentido pra mim</label>
+    </div>
+    <div class="question">
+      <p>5. Se existisse um espaço sigiloso e respeitoso sobre esse tema, você gostaria de participar?</p>
+      <label><input type="radio" name="q5"> Sim, me interessa</label>
+      <label><input type="radio" name="q5"> Talvez observar</label>
+      <label><input type="radio" name="q5"> Não, obrigado</label>
+    </div>
+    <button type="submit">Ver Resultado</button>
+  </form>
+  <div id="result" class="result hidden">
+    <p>🧠 Seu perfil mostra traços comportamentais que indicam um padrão de sensibilidade emocional ampliada.</p>
+    <p>Existe um grupo restrito que debate essas questões com anonimato e respeito total. A entrada é gratuita.</p>
+    <a href="https://t.me/seu_grupo_vip" target="_blank">
+      <button>Entrar na Comunidade Privada</button>
+    </a>
+    <div class="utm-data" id="utmInfo"></div>
+  </div>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.classList.add('hidden');
+      document.getElementById('result').classList.remove('hidden');
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    let utmText = '';
+    params.forEach((value, key) => {
+      utmText += `${key}: ${value}\n`;
+    });
+    document.getElementById('utmInfo').innerText = utmText || '';
+    console.log('🔍 UTMFY TRACKING:', Object.fromEntries(params));
+  </script>
 </body>
 </html>
