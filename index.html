@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Autoavaliação Emocional</title>
+  <title>Grupo secreto para 🐂</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <script
     src="https://cdn.utmify.com.br/scripts/utms/latest.js"
@@ -39,15 +39,11 @@
       text-align: center;
     }
     .question {
-      display: none;
       margin-bottom: 30px;
-    }
-    .question.active {
-      display: block;
     }
     h1 {
       color: #FFD700;
-      font-size: 24px;
+      font-size: 26px;
       margin-bottom: 20px;
     }
     label {
@@ -78,65 +74,54 @@
   </style>
 </head>
 <body>
-  <h1>Autoavaliação Comportamental Anônima</h1>
+  <h1>Responde aí, corn0 assumido ou não?</h1>
   <form id="quizForm">
-    <div class="question active">
-      <p>1. Você sente impulsos emocionais incomuns em relação ao comportamento da sua parceira?</p>
-      <label><input type="radio" name="q1"> Sim, com frequência</label>
-      <label><input type="radio" name="q1"> Eventualmente</label>
-      <label><input type="radio" name="q1"> Não sinto isso</label>
+    <div class="question">
+      <p>1. Você já ficou de pa* duro imaginando ela com outro?</p>
+      <label><input type="radio" name="q1"> Sim, direto</label>
+      <label><input type="radio" name="q1"> Já rolou</label>
+      <label><input type="radio" name="q1"> Que nojo</label>
     </div>
     <div class="question">
-      <p>2. Situações de controle ou hierarquia em relações geram estímulos psicológicos em você?</p>
-      <label><input type="radio" name="q2"> Sim, intensamente</label>
-      <label><input type="radio" name="q2"> Curiosidade leve</label>
-      <label><input type="radio" name="q2"> Não tenho isso</label>
+      <p>2. Você curte obedecer ou ficar quietinho enquanto ela manda?</p>
+      <label><input type="radio" name="q2"> Sim, manda em mim</label>
+      <label><input type="radio" name="q2"> Gosto um pouco</label>
+      <label><input type="radio" name="q2"> Não mesmo</label>
     </div>
     <div class="question">
-      <p>3. Você sente satisfação ao imaginar cenários de observação ou distanciamento afetivo?</p>
-      <label><input type="radio" name="q3"> Sim, me provoca algo</label>
-      <label><input type="radio" name="q3"> Depende do contexto</label>
+      <p>3. Já deixou ela sair e ficou imaginando o que podia estar rolando?</p>
+      <label><input type="radio" name="q3"> Sempre</label>
+      <label><input type="radio" name="q3"> Às vezes</label>
       <label><input type="radio" name="q3"> Nunca</label>
     </div>
     <div class="question">
-      <p>4. Você sente vontade de entender melhor comportamentos considerados atípicos nas relações?</p>
-      <label><input type="radio" name="q4"> Sim, quero explorar isso</label>
-      <label><input type="radio" name="q4"> Um pouco</label>
-      <label><input type="radio" name="q4"> Não faz sentido pra mim</label>
+      <p>4. Você já procurou vídeos de corn0 na internet?</p>
+      <label><input type="radio" name="q4"> Sim, e gozei</label>
+      <label><input type="radio" name="q4"> Já vi sim</label>
+      <label><input type="radio" name="q4"> Tá maluco?</label>
     </div>
     <div class="question">
-      <p>5. Se existisse um espaço sigiloso e respeitoso sobre esse tema, você gostaria de participar?</p>
-      <label><input type="radio" name="q5"> Sim, me interessa</label>
-      <label><input type="radio" name="q5"> Talvez observar</label>
-      <label><input type="radio" name="q5"> Não, obrigado</label>
+      <p>5. Você gostaria de entrar num grupo com outros caras que curtem esse tipo de coisa?</p>
+      <label><input type="radio" name="q5"> Sim, quero muito</label>
+      <label><input type="radio" name="q5"> Só pra ver</label>
+      <label><input type="radio" name="q5"> Não, tô suave</label>
     </div>
-    <button type="button" id="nextBtn">Próxima</button>
+    <button type="submit">Ver Resultado</button>
   </form>
   <div id="result" class="result hidden">
-    <p>🧠 Seu perfil mostra traços comportamentais que indicam um padrão de sensibilidade emocional ampliada.</p>
-    <p>Existe um grupo restrito que debate essas questões com anonimato e respeito total. A entrada é gratuita.</p>
-    <a href="https://t.me/seu_grupo_vip" target="_blank">
-      <button>Entrar na Comunidade Privada</button>
+    <p>🦌 Tu é corno assumido, porra. E tá tudo bem! 😂</p>
+    <p>Tem um grupo só com gente que curte essa parada. Quer trocar ideia com quem vive o mesmo rolê?</p>
+    <a href="https://t.me/lacasadoscornosvip" target="_blank">
+      <button>Entrar no Grupo dos Corno VIP</button>
     </a>
     <div class="utm-data" id="utmInfo"></div>
   </div>
 
   <script>
-    const questions = document.querySelectorAll('.question');
-    let currentQuestion = 0;
-
-    document.getElementById('nextBtn').addEventListener('click', function () {
-      const current = questions[currentQuestion];
-      const selected = current.querySelector('input[type="radio"]:checked');
-      if (!selected) return alert('Escolha uma opção pra continuar');
-      current.classList.remove('active');
-      currentQuestion++;
-      if (currentQuestion < questions.length) {
-        questions[currentQuestion].classList.add('active');
-      } else {
-        document.getElementById('quizForm').classList.add('hidden');
-        document.getElementById('result').classList.remove('hidden');
-      }
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.classList.add('hidden');
+      document.getElementById('result').classList.remove('hidden');
     });
 
     const params = new URLSearchParams(window.location.search);
