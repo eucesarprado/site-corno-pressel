@@ -3,19 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grupo secreto para 🐂</title>
+  <title>Você é corn0 assumido?</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <script
-    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-    data-utmify-prevent-xcod-sck
-    data-utmify-prevent-subids
-    async
-    defer
-  ></script>
-  <!-- Meta Pixel Code -->
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
     n.queue=[];t=b.createElement(e);t.async=!0;
@@ -38,33 +30,27 @@
       color: #fff;
       text-align: center;
     }
-    .question {
-      margin-bottom: 30px;
+    .step {
+      display: none;
+    }
+    .step.active {
+      display: block;
     }
     h1 {
       color: #FFD700;
-      font-size: 26px;
+      font-size: 24px;
       margin-bottom: 20px;
     }
-    label {
-      display: block;
-      margin: 10px 0;
-    }
-    button {
+    .btn {
       background-color: #FFD700;
       color: #000;
       font-weight: bold;
-      padding: 10px 20px;
+      padding: 12px 20px;
+      margin: 10px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
       font-size: 16px;
-    }
-    .hidden {
-      display: none;
-    }
-    .result {
-      margin-top: 30px;
     }
     .utm-data {
       margin-top: 20px;
@@ -74,56 +60,55 @@
   </style>
 </head>
 <body>
-  <h1>Responde aí, corn0 assumido ou não?</h1>
-  <form id="quizForm">
-    <div class="question">
-      <p>1. Você já ficou de pa* duro imaginando ela com outro?</p>
-      <label><input type="radio" name="q1"> Sim, direto</label>
-      <label><input type="radio" name="q1"> Já rolou</label>
-      <label><input type="radio" name="q1"> Que nojo</label>
-    </div>
-    <div class="question">
-      <p>2. Você curte obedecer ou ficar quietinho enquanto ela manda?</p>
-      <label><input type="radio" name="q2"> Sim, manda em mim</label>
-      <label><input type="radio" name="q2"> Gosto um pouco</label>
-      <label><input type="radio" name="q2"> Não mesmo</label>
-    </div>
-    <div class="question">
-      <p>3. Já deixou ela sair e ficou imaginando o que podia estar rolando?</p>
-      <label><input type="radio" name="q3"> Sempre</label>
-      <label><input type="radio" name="q3"> Às vezes</label>
-      <label><input type="radio" name="q3"> Nunca</label>
-    </div>
-    <div class="question">
-      <p>4. Você já procurou vídeos de corn0 na internet?</p>
-      <label><input type="radio" name="q4"> Sim, e gozei</label>
-      <label><input type="radio" name="q4"> Já vi sim</label>
-      <label><input type="radio" name="q4"> Tá maluco?</label>
-    </div>
-    <div class="question">
-      <p>5. Você gostaria de entrar num grupo com outros caras que curtem esse tipo de coisa?</p>
-      <label><input type="radio" name="q5"> Sim, quero muito</label>
-      <label><input type="radio" name="q5"> Só pra ver</label>
-      <label><input type="radio" name="q5"> Não, tô suave</label>
-    </div>
-    <button type="submit">Ver Resultado</button>
-  </form>
-  <div id="result" class="result hidden">
+  <h1 id="quizTitle">Responde aí, corno assumido ou não?</h1>
+
+  <div class="step active" id="step1">
+    <p>Você já ficou de pa* duro imaginando ela com outro?</p>
+    <button class="btn" onclick="nextStep()">Sim, direto</button>
+    <button class="btn" onclick="nextStep()">Já rolou</button>
+  </div>
+  <div class="step" id="step2">
+    <p>Você curte obedecer ou ficar quietinho enquanto ela manda?</p>
+    <button class="btn" onclick="nextStep()">Sim, manda em mim</button>
+    <button class="btn" onclick="nextStep()">Gosto um pouco</button>
+  </div>
+  <div class="step" id="step3">
+    <p>Já deixou ela sair e ficou imaginando o que podia estar rolando?</p>
+    <button class="btn" onclick="nextStep()">Sempre</button>
+    <button class="btn" onclick="nextStep()">Às vezes</button>
+  </div>
+  <div class="step" id="step4">
+    <p>Você já procurou vídeos de corno na internet?</p>
+    <button class="btn" onclick="nextStep()">Sim, e gozei</button>
+    <button class="btn" onclick="nextStep()">Já vi sim</button>
+  </div>
+  <div class="step" id="step5">
+    <p>Você gostaria de entrar num grupo com outros caras que curtem esse tipo de coisa?</p>
+    <button class="btn" onclick="showResult()">Sim, quero muito</button>
+    <button class="btn" onclick="showResult()">Só pra ver</button>
+  </div>
+
+  <div class="step" id="result">
     <p>🦌 Tu é corno assumido, porra. E tá tudo bem! 😂</p>
-    <p>Tem um grupo só com gente que curte essa parada. Quer trocar ideia com quem vive o mesmo rolê?</p>
+    <p>Tem um grupo fechado que solta só vídeo vazado e conteúdo 🔞.
+Nada de conversa, só putar**.</p>
     <a href="https://t.me/lacasadoscornosvip" target="_blank">
-      <button>Entrar no Grupo dos Corno VIP</button>
+      <button class="btn">Entrar no Grupo dos Corno VIP</button>
     </a>
     <div class="utm-data" id="utmInfo"></div>
   </div>
 
   <script>
-    document.getElementById('quizForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      this.classList.add('hidden');
-      document.getElementById('result').classList.remove('hidden');
-    });
-
+    let currentStep = 1;
+    function nextStep() {
+      document.getElementById('step' + currentStep).classList.remove('active');
+      currentStep++;
+      document.getElementById('step' + currentStep).classList.add('active');
+    }
+    function showResult() {
+      document.getElementById('step5').classList.remove('active');
+      document.getElementById('result').classList.add('active');
+    }
     const params = new URLSearchParams(window.location.search);
     let utmText = '';
     params.forEach((value, key) => {
