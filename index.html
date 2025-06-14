@@ -39,7 +39,11 @@
       text-align: center;
     }
     .question {
+      display: none;
       margin-bottom: 30px;
+    }
+    .question.active {
+      display: block;
     }
     h1 {
       color: #FFD700;
@@ -76,7 +80,7 @@
 <body>
   <h1>Autoavaliação Comportamental Anônima</h1>
   <form id="quizForm">
-    <div class="question">
+    <div class="question active">
       <p>1. Você sente impulsos emocionais incomuns em relação ao comportamento da sua parceira?</p>
       <label><input type="radio" name="q1"> Sim, com frequência</label>
       <label><input type="radio" name="q1"> Eventualmente</label>
@@ -106,7 +110,7 @@
       <label><input type="radio" name="q5"> Talvez observar</label>
       <label><input type="radio" name="q5"> Não, obrigado</label>
     </div>
-    <button type="submit">Ver Resultado</button>
+    <button type="button" id="nextBtn">Próxima</button>
   </form>
   <div id="result" class="result hidden">
     <p>🧠 Seu perfil mostra traços comportamentais que indicam um padrão de sensibilidade emocional ampliada.</p>
@@ -118,10 +122,21 @@
   </div>
 
   <script>
-    document.getElementById('quizForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      this.classList.add('hidden');
-      document.getElementById('result').classList.remove('hidden');
+    const questions = document.querySelectorAll('.question');
+    let currentQuestion = 0;
+
+    document.getElementById('nextBtn').addEventListener('click', function () {
+      const current = questions[currentQuestion];
+      const selected = current.querySelector('input[type="radio"]:checked');
+      if (!selected) return alert('Escolha uma opção pra continuar');
+      current.classList.remove('active');
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        questions[currentQuestion].classList.add('active');
+      } else {
+        document.getElementById('quizForm').classList.add('hidden');
+        document.getElementById('result').classList.remove('hidden');
+      }
     });
 
     const params = new URLSearchParams(window.location.search);
